@@ -6,6 +6,7 @@ header_settings:
   logo_image: 
   logo_width: 100
 
+
 menu_settings:
   menu_items:
     - title: 'Projects'
