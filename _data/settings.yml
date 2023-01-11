@@ -3,19 +3,21 @@ basic_settings:
   favicon_image: /images/graph_favicon.png
 
 header_settings:
-  logo_image: 
+  logo_image:
   logo_width: 100
 
 
 menu_settings:
   menu_items:
-    - title: 'Projects'
+    - title: 'About'
       url: '/'
+    - title: 'Projects'
+      url: '/Projects'
     - title: 'Blog'
       url: '/blog/'
 
 footer_settings:
-  logo_image: 
+  logo_image:
   logo_width: 100
   tagline: A beautiful, minimal portfolio Jekyll theme
 
