@@ -28,10 +28,10 @@ post_settings:
   grid_spacing: 10
 
 contact_settings:
-  email_address: ''
+  email_address: 'james.moro.11@gmail.com'
   form_action: 'https://formspree.io/f/xgerpjql'
   confirmation_url: '/thanks'
-  email_subject: 'Contact form submission'
+  email_subject: 'Contact form submission - jmoro.github.io'
   send_button_text: 'Get in Touch'
 
 social_settings:
