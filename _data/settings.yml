@@ -1,9 +1,9 @@
 basic_settings:
-  site_title: James Moro
+  site_title: James Moro - Data Analyst
   favicon_image: /images/graph_favicon.png
 
 header_settings:
-  logo_image:
+  logo_image: /images/emerald_lake.jpg
   logo_width: 100
 
 
@@ -12,7 +12,7 @@ menu_settings:
     - title: 'About'
       url: '/'
     - title: 'Projects'
-      url: '/Projects'
+      url: '/projects/'
     - title: 'Blog'
       url: '/blog/'
 
