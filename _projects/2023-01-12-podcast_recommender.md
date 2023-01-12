@@ -7,106 +7,89 @@ featured_image: laptop_stockimage.jpg
 accent_color: '#4C60E6'
 gallery_images:
   - demo.jpg
-  - laptop_stockimage.jpg
   - demo.jpg
 ---
 
-This page is a demo that shows everything you can do inside portfolio and blog posts.
+So you loved that Stuff You Should Know (SYSK) episode on <i>The Dyatlov Pass Mystery</i>, and want to know which other episodes Josh and chuck have that might be similar? Well with over 1500 episodes, it can be hard to choose.
 
-We've included everything you need to create engaging posts about your work, and show off your case studies in a beautiful way.
+This project uses latent dirichlet allocation (LDA), a natural language processing (NLP) technique, to analyse topics within SYSK episodes and provide similar episode recommendations.
 
-![](/images/laptop_stockimage.jpg)
+Full SYSK Transcripts generously provided by OSF<sup>1</sup>.
 
-**Obviously,** we’ve styled up *all the basic* text formatting options [available in markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+## Transcript storage
+I first use pandas to read the provided parquet files and subsequently write them to a local postgresql database. The files are lazily evaluated so no more than a single parquet file is held in memory at a single time.
 
-You can create lists:
+Storing the files in a database allows for easy access for the rest of the project.
 
-* Simple bulleted lists
-* Like this one
-* Are cool
+## Some Stats
+* Dataset consists of 2044 episodes in total
+* Average length of transcript: 35,485 words
+* Total of 72,531,340 words in the entire corpus
 
-And:
+## Text Preprocessing
 
-1. Numbered lists
-2. Like this other one
-3. Are great too
+Preprocessing is generally the most important and labour intensive part of natural language processing and in broader machine learning and this project is no exception.
+I used three popular NLP packages to undertake preprocessing: spacy, nltk, and gensim. This involved:
+1. Removing stopwords and punctuation. I append my own custom stopwords (contained in "custom_stopwords.txt") to spacy's built in stopwords. These custom stopwords generally consist of common SYSK sponsors, and Josh and Chuck's full names.
+2. Lemmatization. I use NLTK's WordNetLemmatizer to reduce the words to their lemmas.
+3. I then reduce the corpus' size by extracting noun chunks.
+4. Next I extract and append bigrams from the documents.
+5. Common and rare words are then removed from the corpus. Generally, words that are very common (appearing in more than 75% of documents) do not add any useful information to topic modelling. Additionally, words that occur in very few documents are to rare to be clustered into topics.
+6. Finally, a bag of word representation for each document is generated for LDA modelling.
 
-You can also add blockquotes, which are shown at a larger width to help break up the layout and draw attention to key parts of your content:
+## LDA Modelling
+The preprocessed text is then put through a gensim LDA model. There are several parameters to tune here, although most importantly is the number of topics to sort the corpus in to.
+Additionally, I varied Gensim's <i>alpha</i> and <i>eta</i> (traditionally called <i>beta</i> in LDA literature) values, and found optimal results with <i>alpha</i> set to <i>auto</i> and <i>eta</i>  set to <i>symmetric</i>. A nice write up on the effect of these hyperparameters can be found [here](https://afairless.com/the-peanuts-project/topic-modeling/parameter-testing/).
 
-> “Simple can be harder than complex: You have to work hard to get your thinking clean to make it simple. But it’s worth it in the end because once you get there, you can move mountains.”
+### Optimizing number of topics
+Determining the optimal number of topics to use is tricky. I have used two different  metrics to attempt optimize coherence: $C_v$ and $C_{UMass}$, the exact mechanism of how these metrics determine coherence between documents can be found [in the original paper](http://svn.aksw.org/papers/2015/WSDM_Topic_Evaluation/public.pdf). Essentially we are looking to maximise $C_v$ and minimise $C_{UMass}$.
+The results for various number of topics, up to 250, can be seen below:
+![optimization results](images/projects/podcast_recommender/Optimization_results.png)
 
-The theme also supports markdown tables:
+After trialing both 30 topics (max $C_v$) and 70 topics (min $C_{UMass}$), best results were seen with 30 topics, therefore this value was taken forward for further analysis.
 
-| Item                 | Author        | Supports tables? | Price |
-|----------------------|---------------|------------------|-------|
-| Duet Jekyll Theme    | Jekyll Themes | Yes              | $49   |
-| Index Jekyll Theme   | Jekyll Themes | Yes              | $49   |
-| Journal Jekyll Theme | Jekyll Themes | Yes              | $49   |
+## Results Analysis
+After determining the optimal number of topics and rerunning the model using this value, the results were analysed using pyLDAvis.
+The results form pyLDAvis are broken down into the topic bubbles and bar charts, reading the results can be summarised as follows:
+### Topic Bubble:
 
-And footnotes[^1], which link to explanations[^2] at the bottom of the page[^3].
+* The representation includes topics distribution in the 2-dimensional space (left side panel).These topics are represented in the form of bubbles.
+* The larger the bubble, the more frequent is the topic in the documents.
+* A topic model with a low number of topics will have big non-overlapping bubbles, scattered throughout the chart whereas, the topic model with a high number of topics, will have many overlapping small size bubbles, clustered in the chart.
+* Distance between the topics is an approximation of semantic relationship between the topics.
+* The topic which shares common words will be overlapping (closer in distance) in comparison to the non-overlapping topic.
 
-[^1]: Beautiful modern, minimal theme design.
-[^2]: Powerful features to show off your work.
-[^3]: Maintained and supported by the theme developer.
+### Horizontal Bar Graph:
 
-You can throw in some horizontal rules too:
+* The bar graph shows the frequency distribution of the words in the documents (color: blue).
+* The red shaded area describes the frequency of each word given a topic.
+* On selecting a topic (clicking on a topic bubble), top 10 words (with the red-shaded area) are shown.
+* Hovering over the specific words (in the right panel), only the topic containing the words are visible. The size of the bubble in this scenario describes the weight age of the word on that topic. Higher the weight of the selected word, larger will be the size of the bubble.
+
+Generally, we want to see large topic bubbles with little to no overlap.
+
+The full interactive version can be found [in the html file](images/projects/podcast_recommender/topic_vis.html), but I've also included a few screengrabs below.
+
+The first topic can be seen to be generally around the government and laws, partiuarly in the United States.
+
+![topic 1](images/projects/podcast_recommender/topic_1.png)
+
+Whereas the fourth topic aligns with the human body, animals, and natural/living things.
+
+![topic 4](images/projects/podcast_recommender/topic_4.png)
+
+We can see that the algorithm has definitely managed to capture several overarching topics and keywords!
+
+## Final Conclusions
+This project was primarily to learn more about natural language processing and recomendations using topic modelling. Future work I would like to undertake to build on these results:
+1. Further hyperparameter tuning, particuarly on the sensitivity of removing common and rare words, and gensim's $alpha$ and $eta$ parameters.
+2. Host these results on my github pages for people to explore recomendations for themselves, and allow for interactive exploration of the pyLDAvis results.
+
+Oh, and to answer the question on the <i>The Dyatlov Pass Mystery</i> episodes, you should check out:
+* <i>How Cannibalism Works</i>
+* <i>Where's the best place on your body to get shot?</i>
+* <i>Yeti: The Asian Bigfoot</i>
 
 ---
 
-#### Image galleries
-
-Here's a really neat custom feature we added – galleries:
-
-{% include post-components/gallery.html
-	columns = 2
-	full_width = true
-	images = "/images/demo.jpg,/images/demo.jpg,/images/demo.jpg,/images/demo.jpg,
-	"
-%}
-
-Inspired by the Galleries feature from WordPress, we've made it easy to create grid layouts for your images. Just use a simple Liquid snippet in your post to create a masonry grid image layout:
-
-{% raw %}
-```liquid
-{% include post-components/gallery.html
-	columns = 2
-	full_width = true
-	images = "/images/demo.jpg,/images/demo.jpg,/images/demo.jpg,/images/demo.jpg,
-	"
-%}
-```
-{% endraw %}
-
-*See what we did there? Code and syntax highlighting is built-in too!*
-
-Change the number inside the 'columns' setting to create different types of gallery for all kinds of purposes. You can even click on each image to seamlessly enlarge it on the page.
-
-
-#### Image carousels
-
-Here's another gallery with only one column, which creates a carousel slide-show instead.
-
-A nice little feature: the carousel only advances when it is in view, so your visitors won't scroll down to find it half way through your images.
-
-{% include post-components/gallery.html
-	columns = 1
-	full_width = true
-	images = "/images/demo.jpg,/images/demo.jpg,/images/demo.jpg
-	"
-%}
-
-#### What about videos?
-
-Videos are an awesome way to show off your work in a more engaging and personal way, and we’ve made sure they work great on our themes. Just paste an embed code from YouTube or Vimeo, and the theme makes sure it displays perfectly:
-
-{% include post-components/video.html
-	url = "https://player.vimeo.com/video/270725085?color=6c6e95&title=0&byline=0"
-	full_width = true
-%}
-
-### Pretty cool, huh?
-
-We've packed this theme with powerful features to show off your work.
-Why not put them to use on your new website?
-
-<a href="https://jekyllthemes.io/theme/made-portfolio-jekyll-theme" class="button--fill">Get This Theme</a>
+1. Pierson, B. D. (2022, July 30). “Stuff You Should Know” Podcast Transcripts - Full Dataset with Transcript of All Episodes (SYSK_Transcripts). https://doi.org/10.17605/OSF.IO/VM9NT
