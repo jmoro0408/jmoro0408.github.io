@@ -10,6 +10,8 @@ gallery_images:
   - demo.jpg
 ---
 
+![](images/laptop_stockimage.jpg)
+
 So you loved that Stuff You Should Know (SYSK) episode on <i>The Dyatlov Pass Mystery</i>, and want to know which other episodes Josh and chuck have that might be similar? Well with over 1500 episodes, it can be hard to choose.
 
 This project uses latent dirichlet allocation (LDA), a natural language processing (NLP) technique, to analyse topics within SYSK episodes and provide similar episode recommendations.
@@ -46,7 +48,7 @@ Additionally, I varied Gensim's <i>alpha</i> and <i>eta</i> (traditionally calle
 ### Optimizing number of topics
 Determining the optimal number of topics to use is tricky. I have used two different  metrics to attempt optimize coherence: $C_v$ and $C_{UMass}$, the exact mechanism of how these metrics determine coherence between documents can be found [in the original paper](http://svn.aksw.org/papers/2015/WSDM_Topic_Evaluation/public.pdf). Essentially we are looking to maximise $C_v$ and minimise $C_{UMass}$.
 The results for various number of topics, up to 250, can be seen below:
-![](/images/projects/podcast_recommender/Optimization_results.png)
+![](/images/podcast_recommender/Optimization_results.png)
 
 After trialing both 30 topics (max $C_v$) and 70 topics (min $C_{UMass}$), best results were seen with 30 topics, therefore this value was taken forward for further analysis.
 
@@ -74,11 +76,11 @@ The full interactive version can be found [in the html file](images/projects/pod
 
 The first topic can be seen to be generally around the government and laws, partiuarly in the United States.
 
-![topic 1](/images/projects/podcast_recommender/topic_1.png)
+![topic 1](/images/podcast_recommender/topic_1.png)
 
 Whereas the fourth topic aligns with the human body, animals, and natural/living things.
 
-![topic 4](/images/projects/podcast_recommender/topic_4.png)
+![topic 4](/images/podcast_recommender/topic_4.png)
 
 We can see that the algorithm has definitely managed to capture several overarching topics and keywords!
 
