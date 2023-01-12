@@ -6,9 +6,7 @@ description: So you loved that Stuff You Should Know (SYSK) episode on The Dyatl
 featured_image: laptop_stockimage.jpg
 accent_color: '#4C60E6'
 gallery_images:
-  - demo.jpg
-  - demo.jpg
-  - demo.jpg
+  - /images/laptop_stockimage.jpg
 ---
 
 This page is a demo that shows everything you can do inside portfolio and blog posts.
