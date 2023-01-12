@@ -10,7 +10,7 @@ gallery_images:
   - demo.jpg
 ---
 
-![](images/laptop_stockimage.jpg)
+![](/images/laptop_stockimage.jpg)
 
 So you loved that Stuff You Should Know (SYSK) episode on <i>The Dyatlov Pass Mystery</i>, and want to know which other episodes Josh and chuck have that might be similar? Well with over 1500 episodes, it can be hard to choose.
 
