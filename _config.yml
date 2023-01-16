@@ -1,7 +1,7 @@
 site: JMoro Portfolio
 
 url: https://jmoro0408.github.io/
-baseurl: 
+baseurl:
 
 collections:
   pages:
@@ -12,7 +12,7 @@ collections:
     permalink: /blog/:slug
   projects:
     output: true
-    permalink: /project/:slug
+    permalink: /:collection/:title
 
 defaults:
   -
@@ -50,7 +50,7 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
-  
+
 sass:
   style: compressed
 
