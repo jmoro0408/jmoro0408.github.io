@@ -5,7 +5,7 @@ description: A small collection of projects I've worked on.
 featured_image: images/laptop_stockimage.jpg
 ---
 
-<div class="page-blog">
+<div class="page-projects">
 	<header class="header--single">
 		<div class="wrap">
 			<h1 class="header__title">Projects</h1>
@@ -25,7 +25,7 @@ featured_image: images/laptop_stockimage.jpg
 	<section class="all-projects">
 		<div class="wrap">
 			<div class="projects__list grid">
-				{% for project in site.projects %}
+				{% for project in paginator.projects %}
 				{% if forloop.first == true %}
 				<article class="project project-new">
 					<div class="grid">
