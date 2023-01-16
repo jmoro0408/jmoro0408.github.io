@@ -3,7 +3,7 @@ title: Podcast Recommender
 subtitle: Using natural language processing to provide podast episode recomendations.
 date: 2023-01-12 00:00:00
 description: So you loved that Stuff You Should Know (SYSK) episode on The Dyatlov Pass Mystery, and want to know which other episodes Josh and chuck have that might be similar? Well with over 1500 episodes, it can be hard to choose.
-featured_image: laptop_stockimage.jpg
+featured_image: /images/laptop_stockimage.jpg
 accent_color: '#4C60E6'
 gallery_images:
   - demo.jpg
@@ -11,7 +11,7 @@ gallery_images:
 ---
 
 <!-- ![](/images/laptop_stockimage.jpg) -->
-<img src="/images/laptop_stockimage.jpg" alt="laptop_stock" width="200"/>
+<!-- <img src="/images/laptop_stockimage.jpg" alt="laptop_stock" width="200"/> -->
 
 So you loved that Stuff You Should Know (SYSK) episode on <i>The Dyatlov Pass Mystery</i>, and want to know which other episodes Josh and chuck have that might be similar? Well with over 1500 episodes, it can be hard to choose.
 
