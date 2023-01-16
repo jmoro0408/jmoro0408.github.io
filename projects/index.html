@@ -13,46 +13,46 @@ featured_image: images/laptop_stockimage.jpg
 		</div>
 	</header>
 
-	{% for project in site.projects %}
+	<!-- {% for project in site.projects %}
 	<h2>
 	  <a href="{{ project.url }}">
 		{{ project.title }}
 		</a>
 	</h2>
 	<p>{{ project.description }}</p>
-  {% endfor %}
+  {% endfor %} -->
 
-	<!-- <section class="all-posts">
+	<section class="all-projects">
 		<div class="wrap">
-			<div class="posts__list grid">
+			<div class="projects__list grid">
 				{% for project in site.projects %}
 				{% if forloop.first == true %}
-				<article class="post post-new">
+				<article class="project project-new">
 					<div class="grid">
 						<a href="{{ project.url | relative_url }}">
-							<div class="post__image{% if paginator.page == 1 %} post__image--new{% endif %}"
+							<div class="project__image{% if paginator.page == 1 %} project__image--new{% endif %}"
 								style="background-image: url({{ project.featured_image | relative_url }})">
 							</div>
 						</a>
 
-						<div class="post__content-wrap">
-							<div class="post__content">
-								<time class="post__date label--small">{{ project.date | date: "%B %d, %Y" }}</time>
-								<h2 class="post__title h4"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
-								<p class="post__subtitle">{{ project.subtitle }}</p>
-								<p class="post__description">{{ project.description }}</p>
-								<a href="{{ project.url | relative_url }}" class="post__link button--text--accent --right">Keep Reading</a>
+						<div class="project__content-wrap">
+							<div class="project__content">
+								<time class="project__date label--small">{{ project.date | date: "%B %d, %Y" }}</time>
+								<h2 class="project__title h4"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
+								<p class="project__subtitle">{{ project.subtitle }}</p>
+								<p class="project__description">{{ project.description }}</p>
+								<a href="{{ project.url | relative_url }}" class="project__link button--text--accent --right">Keep Reading</a>
 							</div>
 						</div>
 					</div>
 				</article>
 				{% else %}
-				{% include component__post-preview.html %}
+				{% include component__project-preview.html %}
 				{% endif %}
 				{% endfor %}
 			</div>
 		</div>
-	</section> -->
+	</section>
 
 	{% if paginator.total_pages > 1 %}
 
