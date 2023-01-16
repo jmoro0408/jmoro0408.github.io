@@ -4,18 +4,18 @@
 
 // - - - - - - - - - - - - - - - - - -
 
-.page-blog {
-  .all-posts {
+.page-project {
+  .all-projects {
     margin-bottom: 48px;
 
-    .post-new {
+    .projects-new {
       margin-bottom: 16px;
 
       .grid {
         grid-gap: 24px;
       }
 
-      .post__image {
+      .projects__image {
         width: calc(100% + 60px);
         height: 288px;
         position: relative;
@@ -51,29 +51,29 @@
         }
       }
 
-      .post__content-wrap {
+      .projects__content-wrap {
         justify-self: center;
         align-self: center;
       }
 
-      .post__content {
+      .projects__content {
         max-width: 456px;
       }
 
-      .post__date {
+      .projects__date {
         margin-bottom: 8px;
       }
 
-      .post__title {
+      .projects__title {
         margin-bottom: 12px;
       }
 
-      .post__description {
+      .projects__description {
         margin-bottom: 16px;
       }
     }
 
-    .posts__list {
+    .projects__list {
       grid-row-gap: 56px;
     }
   }
@@ -92,14 +92,14 @@
   }
 
   @include mq(tabletp) {
-    .all-posts {
+    .all-projects {
       margin-bottom: 80px;
 
-      .posts__list {
+      .projects____list {
         grid-template-columns: 1fr 1fr;
       }
 
-      .post-new {
+      .projects-new {
         grid-column: 1/3;
 
         .grid {
@@ -107,7 +107,7 @@
           grid-gap: 30px;
         }
 
-        .post__image {
+        .projects__image {
           width: 100%;
           margin-left: 0;
 
@@ -120,11 +120,11 @@
           }
         }
 
-        .post__title {
+        .projects__title {
           margin-bottom: 24px;
         }
 
-        .post__description {
+        .projects__description {
           margin-bottom: 24px;
         }
       }
@@ -136,18 +136,18 @@
   }
 
   @include mq(tabletl) {
-    .all-posts {
+    .all-projects {
       margin-bottom: 100px;
 
-      .post-new {
+      .projects-new {
         grid-column: 1/4;
 
-        .post__image {
+        .projects__image {
           height: 386px;
         }
       }
 
-      .posts__list {
+      .projects__list {
         grid-template-columns: 1fr 1fr 1fr;
         grid-row-gap: 80px;
       }
