@@ -21,7 +21,7 @@ featured_image: images/laptop_stockimage.jpg
 				<article class="project project-new">
 					<div class="grid">
 						<a href="{{ project.url | relative_url }}">
-							<div class="project__image{% if paginator.page == 1 %} project__image--new{% endif %}"
+							<div class="project__image"
 								style="background-image: url({{ project.featured_image | relative_url }})">
 							</div>
 						</a>
