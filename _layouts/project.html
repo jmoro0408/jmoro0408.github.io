@@ -13,7 +13,7 @@ layout: default
 			<h2 class="post__subtitle subtitle--light">{{ page.subtitle }}</h2>
 		</div>
 
-		<img src="{{ '/images/projects/' | relative_url}}{{ page.featured_image }}" class="post__featured-image">
+		<img src="{{ project.featured_image | relative_url }}" class="project__featured-image">
 
 	</header>
 
@@ -25,7 +25,7 @@ layout: default
 			<article class="post__content {% if page.highlight_first %}highlight-first{% endif %}">
 				{{ page.content }}
 			</article>
-			
+
 		</div>
 
 	</section>

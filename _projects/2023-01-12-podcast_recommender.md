@@ -3,17 +3,16 @@ title: Podcast Recommender
 subtitle: Using natural language processing to provide podast episode recomendations.
 date: 2023-01-12 00:00:00
 description: So you loved that Stuff You Should Know (SYSK) episode on The Dyatlov Pass Mystery, and want to know which other episodes Josh and chuck have that might be similar? Well with over 1500 episodes, it can be hard to choose.
-featured_image: /images/laptop_stockimage.jpg
+featured_image: laptop_closed_stock.jpg
 accent_color: '#4C60E6'
 gallery_images:
-  - demo.jpg
-  - demo.jpg
+  - /stock_telescope.jpg
 ---
 
-<!-- ![](/images/laptop_stockimage.jpg) -->
-<!-- <img src="/images/laptop_stockimage.jpg" alt="laptop_stock" width="200"/> -->
-
 So you loved that Stuff You Should Know (SYSK) episode on <i>The Dyatlov Pass Mystery</i>, and want to know which other episodes Josh and chuck have that might be similar? Well with over 1500 episodes, it can be hard to choose.
+
+<img src="/images/stock_telescope.jpg" alt="telescope_stock" width="1000"/>
+
 
 This project uses latent dirichlet allocation (LDA), a natural language processing (NLP) technique, to analyse topics within SYSK episodes and provide similar episode recommendations.
 
