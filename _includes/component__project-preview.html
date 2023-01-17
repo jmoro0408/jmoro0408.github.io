@@ -1,8 +1,7 @@
 <article class="post__card">
-  <a href="{{ project.url | relative_url }}" class="post__link">
-    <div class="post__image" style="background-image: url({{ project.featured_image | relative_url }})">
-    </div>
-    <time class="post__date label--small">{{ project.date | date: "%B %d, %Y" }}</time>
-    <h5 class="post__title subtitle">{{ project.title }}</h5>
-  </a>
+   <h2 class="project__title h4"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
+   <time class="post__date label--small">{{ project.date | date: "%B %d, %Y" }}</time>
+   <p class="project__subtitle">{{ project.subtitle }}</p>
+   <p class="project__description">{{ project.description }}</p>
+   </a>
 </article>
