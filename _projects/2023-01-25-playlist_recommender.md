@@ -1,3 +1,14 @@
+---
+title: Spotify Playlist Enhancer
+subtitle: Enhancing user playlists through neural network implementation.
+date: 2023-01-25 00:00:00
+description: Matching well suited songs to user playlists, assiting in the creation of a well rounded user experience.
+featured_image: sheetmusic.jpg
+accent_color: '#4C60E6'
+gallery_images:
+  - /sheetmusic.jpg
+---
+
 # Spotify Playlist Enhancer
 
 The goal of this project is to suggest my liked Spotify tracks to my playlists, with the aim of enhancing my playlists with tracks I may have missed.
@@ -6,7 +17,7 @@ The goal of this project is to suggest my liked Spotify tracks to my playlists, 
 
 * Neural net works best
 * Oversampling produced artificially high scores but poor predictions, manually setting class weights works much better.
-* The algorithm performed well overall, with mistakes restricted to mistakes that even humans would make.
+* The algorithm performed well overall, with mistakes restricted to misclassifications that are human-like in nature.
 
 ## Data Gathering
 
