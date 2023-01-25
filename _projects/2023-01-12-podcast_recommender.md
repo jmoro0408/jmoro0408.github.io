@@ -9,6 +9,7 @@ gallery_images:
   - /stock_telescope.jpg
 ---
 
+
 So you loved that Stuff You Should Know (SYSK) episode on <i>The Dyatlov Pass Mystery</i>, and want to know which other episodes Josh and chuck have that might be similar? Well with over 1500 episodes, it can be hard to choose.
 
 <img src="/images/stock_telescope.jpg" alt="telescope_stock" width="1000"/>
@@ -48,6 +49,8 @@ Additionally, I varied Gensim's <i>alpha</i> and <i>eta</i> (traditionally calle
 ### Optimizing number of topics
 Determining the optimal number of topics to use is tricky. I have used two different  metrics to attempt optimize coherence: $C_v$ and $C_{UMass}$, the exact mechanism of how these metrics determine coherence between documents can be found [in the original paper](http://svn.aksw.org/papers/2015/WSDM_Topic_Evaluation/public.pdf). Essentially we are looking to maximise $C_v$ and minimise $C_{UMass}$.
 The results for various number of topics, up to 250, can be seen below:
+
+
 ![](/images/podcast_recommender/Optimization_results.png)
 
 After trialing both 30 topics (max $C_v$) and 70 topics (min $C_{UMass}$), best results were seen with 30 topics, therefore this value was taken forward for further analysis.
@@ -72,7 +75,9 @@ The results form pyLDAvis are broken down into the topic bubbles and bar charts,
 
 Generally, we want to see large topic bubbles with little to no overlap.
 
-The full interactive version can be found [in the html file](images/projects/podcast_recommender/topic_vis.html), but I've also included a few screengrabs below.
+The full interactive version can be found explored below:
+
+{% include topic_vis.html %}
 
 The first topic can be seen to be generally around the government and laws, partiuarly in the United States.
 
