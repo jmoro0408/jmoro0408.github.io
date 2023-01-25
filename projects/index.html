@@ -16,7 +16,7 @@ featured_image: images/laptop_stockimage.jpg
 	<section class="all-projects">
 		<div class="wrap">
 			<div class="posts__list grid">
-				{% for project in site.projects %}
+				{% for project in site.projects reversed %}
 				{% if forloop.first == true %}
 				<article class="project project-new">
 					<div class="grid">
