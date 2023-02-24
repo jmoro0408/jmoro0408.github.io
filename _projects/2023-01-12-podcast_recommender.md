@@ -76,6 +76,7 @@ The results form pyLDAvis are broken down into the topic bubbles and bar charts,
 Generally, we want to see large topic bubbles with little to no overlap.
 
 The full interactive version can be found explored below:
+(you may need to refresh the page)
 
 {% include topic_vis.html %}
 
