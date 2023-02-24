@@ -6,7 +6,7 @@ featured_image: '/images/blog_excel/spreadsheet_stockimage.jpg'
 ---
 I've had the opportunity to work a lot with Excel recently and, although I always considered myself competent, I have recently discovered some new functions/features that have allowed my efficiency to increase hugely.
 
-![spreadsheet_stock](/images/blog_excel/spreadsheet_stockimage.jpg){:height="500px" width="500px"}
+![spreadsheet_stock](/images/blog_excel/spreadsheet_stockimage.jpg)
 
 
 
@@ -14,7 +14,13 @@ I've had the opportunity to work a lot with Excel recently and, although I alway
 These are roughly ranked in what I consider to be the more common/well known to least.
 
 ## 1. Data Validation
+* Coming soon
+
 ## 2. AGGREGATE
+* Coming soon
 ## 3. FILTER
+* Coming soon
 ## 4. INDIRECT
+* Coming soon
 ## 5. Camera Function
+* Coming soon

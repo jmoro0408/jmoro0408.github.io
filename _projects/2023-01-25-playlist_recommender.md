@@ -2,7 +2,7 @@
 title: Spotify Playlist Enhancer
 subtitle: Enhancing user playlists through neural network implementation.
 date: 2023-01-25 00:00:00
-description: Matching well suited songs to user playlists, assiting in the creation of a well rounded user experience.
+description: Matching well suited songs to user playlists, assisting in the creation of a well rounded user experience.
 featured_image: sheetmusic.jpg
 accent_color: '#4C60E6'
 gallery_images:
