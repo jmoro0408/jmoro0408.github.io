@@ -21,6 +21,8 @@ Full SYSK Transcripts generously provided by OSF<sup>1</sup>.
 
 All the source code for this project can be found [on my github](https://github.com/jmoro0408/Podcast_Episode_Recommender).
 
+Checkout the final streamlit recommendation app [here](https://jmoro0408-podcast-episode-recommender-streamlit-app-pup4hd.streamlit.app/)!
+
 ## Transcript storage
 I first use pandas to read the provided parquet files and subsequently write them to a local postgresql database. The files are lazily evaluated so no more than a single parquet file is held in memory at a single time.
 
