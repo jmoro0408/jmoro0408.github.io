@@ -10,6 +10,5 @@ group :jekyll_plugins do
   gem "jekyll-redirect-from"
   gem "jekyll-sitemap"
   gem "jekyll-avatar"
-  gem "jemoji"
 end
 gem "webrick", "~> 1.7"
