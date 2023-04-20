@@ -26,7 +26,7 @@ New parkrun events are always springing up, however a list of new events is not 
 
 The workflow automatically runs weekly, every Sunday morning. It uses the Python [requests](https://requests.readthedocs.io/en/latest/) library to scrape parkrun event json data and store it locally.
 
-All UK events are then filtered out and the latest event data compared to that of the previous week. All new events are collected and their locations plotted on an interactive map of the UK, as shown below:
+All UK events are then filtered out and the latest event data compared to that of the previous week. All new events are collected and their locations plotted on an interactive map of the UK, as shown below: (you may need to refresh the page to load the interactive map).
 
 {% include parkrun_map.html %}
 
