@@ -15,7 +15,7 @@ gallery_images:
 
 There are currently more than 2,000 parkrun locations taking part in over 22 countries.
 
-To try and "complete" different parkrun challenegs is fairly common, including running all the events within a city, or trying to complete a different event for each letter of the alphabet.
+To try and "complete" different parkrun challenges is fairly common, including running all the events within a city, or trying to complete a different event for each letter of the alphabet.
 
 New parkrun events are always springing up, however a list of new events is not published by parkrun itself, mainly to avoid very large turnouts to new events.
 
@@ -31,7 +31,7 @@ All UK events are then filtered out and the latest event data compared to that o
 {% include parkrun_map.html %}
 
 
-Finally the new events are emailed via Gmail along with the interactive map to a distirbution list.
+Finally the new events are emailed via Gmail along with the interactive map to a distribution list.
 
 These tasks are orchestrated via [Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/index.html), contained within
 Docker, hosted on a raspberry pi.
@@ -48,7 +48,7 @@ A credentials.toml file is used to hold the following private (and some public) 
 * gmail credentials -
   * sender address
   * sender password - note this is an "app password", **not** your usual login password. [See here for more info](https://stackoverflow.com/questions/33286691/gmail-smtp-requires-an-app-password)
-  * recipant addresses - defined as an array in the .toml
+  * recipiant addresses - defined as an array in the .toml
 
 A custom Docker image also needs to be built. I've included the docker-compose yaml file in the [github repository](https://github.com/jmoro0408/parkrun). This is just the standard apache airflow image extended to include requests, plotly, pandas, and tomli.
 

@@ -1,6 +1,6 @@
 ---
 title: Podcast Recommender
-subtitle: Using natural language processing to provide podast episode recomendations.
+subtitle: Using natural language processing to provide podcast episode recommendations.
 date: 2023-01-12 00:00:00
 description: So you loved that Stuff You Should Know (SYSK) episode on The Dyatlov Pass Mystery, and want to know which other episodes Josh and chuck have that might be similar? Well with over 1500 episodes, it can be hard to choose.
 featured_image: laptop_closed_stock.jpg
@@ -82,7 +82,7 @@ The full interactive version can be found explored below:
 
 {% include topic_vis.html %}
 
-The first topic can be seen to be generally around the government and laws, partiuarly in the United States.
+The first topic can be seen to be generally around the government and laws, particularly in the United States.
 
 ![topic 1](/images/podcast_recommender/topic_1.png)
 
@@ -93,9 +93,9 @@ Whereas the fourth topic aligns with the human body, animals, and natural/living
 We can see that the algorithm has definitely managed to capture several overarching topics and keywords!
 
 ## Final Conclusions
-This project was primarily to learn more about natural language processing and recomendations using topic modelling. Future work I would like to undertake to build on these results:
-1. Further hyperparameter tuning, particuarly on the sensitivity of removing common and rare words, and gensim's $alpha$ and $eta$ parameters.
-2. Host these results on my github pages for people to explore recomendations for themselves, and allow for interactive exploration of the pyLDAvis results.
+This project was primarily to learn more about natural language processing and recommendations using topic modelling. Future work I would like to undertake to build on these results:
+1. Further hyperparameter tuning, particularly on the sensitivity of removing common and rare words, and gensim's $alpha$ and $eta$ parameters.
+2. Host these results on my github pages for people to explore recommendations for themselves, and allow for interactive exploration of the pyLDAvis results.
 
 Oh, and to answer the question on the <i>The Dyatlov Pass Mystery</i> episodes, you should check out:
 * <i>How Cannibalism Works</i>

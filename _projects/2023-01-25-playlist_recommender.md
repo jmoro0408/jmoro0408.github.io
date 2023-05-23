@@ -21,7 +21,7 @@ The goal of this project is to suggest my liked Spotify tracks to my playlists, 
 
 ## Data Gathering
 
-I used [Spotipy](https://spotipy.readthedocs.io/en/master/) to build two seperate dataframes. The first consists of all tracks from each playlist I have created, along with [audio features](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-several-audio-features) such as loudness, danceability, energy, and duration, along with the playlist and artist titles.
+I used [Spotipy](https://spotipy.readthedocs.io/en/master/) to build two separate dataframes. The first consists of all tracks from each playlist I have created, along with [audio features](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-several-audio-features) such as loudness, danceability, energy, and duration, along with the playlist and artist titles.
 
 
 This "playlist_df" had 2417 songs in total, with 2055 unique songs.
@@ -52,13 +52,13 @@ Accuracy was used in conjunction with F1 score to determine the best configurati
 
 ## Preprocessing
 
-Two different techniques for handling the imbalanced data were tried: Overampling and class weights. Oversampling provided higher accuracy and F1 scores, however predictions were highly skewed to the training playlists with a high volume of tracks - showing the imbalance was still a problem.
+Two different techniques for handling the imbalanced data were tried: Oversampling and class weights. Oversampling provided higher accuracy and F1 scores, however predictions were highly skewed to the training playlists with a high volume of tracks - showing the imbalance was still a problem.
 
 Class weights resulted in lower scores but seemed to help the imbalance problem.
 
 I wanted to maintain the artist's name as a feature in each track, however doing so meant that the data had relatively high cardinality. Ordinal encoding doesn't make sense here, and although hashing may be useful I decided to just try one hot encoding and see how well the algorithm performs.
 
-In order to test transformation techniques, I ran logistic regression and XGBoost models with default hyperparameters and recored the best configuration - Max abs scaler with one hot encoding.
+In order to test transformation techniques, I ran logistic regression and XGBoost models with default hyperparameters and recorded the best configuration - Max abs scaler with one hot encoding.
 
 ## Modelling
 
@@ -97,7 +97,7 @@ Commentary on the final predictions can be found in the modelling/prediction_exp
 
 Generally the net performed well on the liked song dataset, with most of the highest confidence predictions fitting nicely into sensible playlists.
 
-The confusion matrix shows the most common mistakes are ones that even a human would likley make, such as mixing up two acoustic-heavy playlists.
+The confusion matrix shows the most common mistakes are ones that even a human would likely make, such as mixing up two acoustic-heavy playlists.
 
 Reassuringly, the playlists that consist of only a single artist consistently scored extremely high.
 
