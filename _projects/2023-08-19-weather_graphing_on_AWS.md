@@ -59,9 +59,9 @@ Once the data is in the bucket, I used a python script hosted on Streamlit cloud
 Examples of rendered charts are shown below (you may need to refresh the page). 
 Note these are static to July 2023, to see live updates please visit the streamlit [app](https://weathergraphing-n3afxbnpm3dp7rdkmtot8r.streamlit.app/).
 
-{% include Max_Temp.html full_width = true %}
-{% include Rainfall.html full_width = true %}
-{% include Sunshine.html full_width = true %}
+{% include Max_Temp.html max-width="200px" %}
+{% include Rainfall.html max-width="200px" %}
+{% include Sunshine.html max-width="200px" %}
 
 Here, the mean and 90% deciles are plotted, along with min/max values. Values for the current year provided as markers, with marker shape aligned to which decile the value lies within.
 
