@@ -1,0 +1,156 @@
+// - - - - - - - - - - - - - - - - - -
+
+// Page - Projects
+
+// - - - - - - - - - - - - - - - - - -
+
+.page-project {
+  .all-projects {
+    margin-bottom: 48px;
+
+    .projects-new {
+      margin-bottom: 16px;
+
+      .grid {
+        grid-gap: 24px;
+      }
+
+      .projects__image {
+        width: calc(100% + 60px);
+        height: 288px;
+        position: relative;
+        margin-left: -30px;
+        margin-bottom: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &--new {
+          &::before {
+            content: "NEW";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+            background-color: $accent-color;
+            color: white;
+            border: 2px solid white;
+            border-radius: 100%;
+
+            font-family: $title-font;
+            font-weight: $bold-weight;
+            font-size: 10px;
+
+            position: absolute;
+            top: -28px;
+            right: 30px;
+
+            transform: rotate(30deg);
+          }
+        }
+      }
+
+      .projects__content-wrap {
+        justify-self: center;
+        align-self: center;
+      }
+
+      .projects__content {
+        max-width: 456px;
+      }
+
+      .projects__date {
+        margin-bottom: 8px;
+      }
+
+      .projects__title {
+        margin-bottom: 12px;
+      }
+
+      .projects__description {
+        margin-bottom: 16px;
+      }
+    }
+
+    .projects__list {
+      grid-row-gap: 56px;
+    }
+  }
+
+  .pagination {
+    margin-bottom: 48px;
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    a {
+      margin: 0 10px;
+    }
+  }
+
+  @include mq(tabletp) {
+    .all-projects {
+      margin-bottom: 80px;
+
+      .projects____list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .projects-new {
+        grid-column: 1/3;
+
+        .grid {
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 30px;
+        }
+
+        .projects__image {
+          width: 100%;
+          margin-left: 0;
+
+          &::before {
+            width: 56px;
+            height: 56px;
+            right: -28px;
+            font-size: 12px;
+            border: 3px solid white;
+          }
+        }
+
+        .projects__title {
+          margin-bottom: 24px;
+        }
+
+        .projects__description {
+          margin-bottom: 24px;
+        }
+      }
+    }
+
+    .pagination a {
+      margin: 0 20px;
+    }
+  }
+
+  @include mq(tabletl) {
+    .all-projects {
+      margin-bottom: 100px;
+
+      .projects-new {
+        grid-column: 1/4;
+
+        .projects__image {
+          height: 386px;
+        }
+      }
+
+      .projects__list {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 80px;
+      }
+    }
+  }
+}
