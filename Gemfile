@@ -11,4 +11,7 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
   gem "jekyll-avatar"
 end
-gem "webrick", "~> 1.7"
+
+gem "webrick", "~> 1.8"
+
+gem "rexml", "~> 3.2"
