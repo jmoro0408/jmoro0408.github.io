@@ -8,7 +8,8 @@ accent_color: '#4C60E6'
 gallery_images:
   - jogging_unsplash.jpg
 ---
-![abstract flow image](https://raw.githubusercontent.com/jmoro0408/jmoro0408.github.io/master/images/parkrun/flow_abstract.jpg)
+
+<img src="https://raw.githubusercontent.com/jmoro0408/jmoro0408.github.io/master/images/parkrun/flow_abstract.jpg" alt="[abstract flow image" width="700"/>
 ## Background
 [Parkrun](https://www.parkrun.org.uk/) is a free, community event where you can walk, jog, run, volunteer or spectate. parkrun is 5k and takes place every Saturday morning, junior parkrun is 2k, dedicated to 4-14 year olds and their families, every Sunday morning.
 
