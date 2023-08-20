@@ -11,9 +11,9 @@ gallery_images:
 
 # TLDR; 
 Didn't know any AWS before, know some AWS now. 
-Built a pipeline with AWS to automatically pull weather data from the met office, visualized with streamlit. 
+Built a pipeline with to automatically pull weather data from the met office, visualized with streamlit. 
 Check out the Streamlit app [here](https://weathergraphing-n3afxbnpm3dp7rdkmtot8r.streamlit.app/).
-
+The code for this project can be found [on my github](https://github.com/jmoro0408/Weather_graphing).
 ## Background
 I've managed to gain experience with Microsoft's cloud offerings (Azure) through a mix of professional work and personal upskilling (I completed the Azure Data Scientist Associate certification last March), and have dabbled with GCP. However throughout my journey the use of Amazon Web Services (AWS) has somehow evaded me, despite AWS having 32% of the cloud market share [(source 2023/08/08)](https://www.statista.com/chart/18819/worldwide-market-share-of-leading-cloud-infrastructure-service-providers/).
 
