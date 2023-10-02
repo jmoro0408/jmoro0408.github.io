@@ -18,6 +18,10 @@ Checkout the final streamlit recommendation app [here](https://podcast-episode-r
 I previously attempted to create a podcast episode recomendation app with latent dirichlet allocation ([link](https://jmoro0408.github.io/project/podcast-recommender)), although an interesting learning experience the final results were not as impressive as i would've liked. Therefore I decided to re-implement the solution using an open source sentence transformer - [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) and [ChromaDB](https://www.trychroma.com/) vector database, with much improved results.  
 
 
+The "Stuff You Should Know" (SYSK) podcast is a popular educational and informative podcast series that explores a wide range of topics, providing listeners with interesting and often quirky insights into various subjects. It is hosted by Josh Clark and Chuck Bryant. 
+
+This app allows users to search the SYSK podcasts for episdodes that interest them, for example episodes on American History, Fast Food, or Unsolved Mysteries. It uses semantic search to return episodes based on context rather than keyword search, for example 'Airplanes' returns among others, "Turbulence" - an episode that may not show up with keyword search. 
+
 ### Data Stats
 * Dataset consists of 2044 episodes in total
 * Average length of transcript: 35,485 words
