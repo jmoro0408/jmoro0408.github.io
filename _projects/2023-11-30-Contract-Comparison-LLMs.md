@@ -2,7 +2,7 @@
 title:  LexLingua - Bridging Legal Worlds with AI Contract Comparison
 subtitle: Empowering Legal Analysis Through Cutting-Edge Language Models
 date: 2023-11-30 00:00:00
-description: Revolutionising legal contract analysis by merging human expertise with advanced language models, delivering succinct summaries for fast decision-making
+description: Merging human expertise with advanced language models to empower legal analysis, delivering succinct summaries for fast decision-making
 featured_image: law_books.jpg
 accent_color: '#996515'
 gallery_images:
