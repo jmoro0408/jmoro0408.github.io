@@ -53,7 +53,7 @@ I attempted using the [stuff](https://python.langchain.com/docs/modules/chains/d
 
 I saw much better results with the [map-reduce](https://python.langchain.com/docs/modules/chains/document/map_reduce) method. Here, the LLM is supplied with a chunk of the document interatively and asked to summarise the chunk - `map`. The summaries are then combined and re-summarised in the `reduce` section. 
 
-<img src="https://python.langchain.com/assets/images/map_reduce-aa3ba13ab16536d9f9e046276bd83dd2.jpg" alt="map-reduce" width="500">
+<img src="https://python.langchain.com/assets/images/map_reduce-aa3ba13ab16536d9f9e046276bd83dd2.jpg" alt="map-reduce">
 
 
 Here's an example of the output for the 2015 Apple T&Cs: 
